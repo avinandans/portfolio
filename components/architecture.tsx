@@ -1,0 +1,9 @@
+ "use client";
+import { Reveal } from "./motion";
+import { motion } from "motion/react";
+
+const nodes = ["UI", "React / Next.js", "State Management", "REST API", "GraphQL", "Firebase"];
+
+export function Architecture() {
+  return <section className="border-t border-white/8 px-5 py-28 lg:px-8"><div className="mx-auto max-w-7xl"><Reveal><p className="text-sm uppercase tracking-[.25em] text-white/35">How I build</p><h2 className="mt-4 text-4xl font-black tracking-[-.04em] sm:text-6xl">Architecture that stays understandable.</h2></Reveal><div className="mt-12 grid gap-8 lg:grid-cols-2"><Reveal><div className="rounded-3xl border border-white/8 bg-white/[.02] p-6 sm:p-8">{nodes.map((n, i) => <div key={n} className="relative flex items-center gap-4"><motion.div whileInView={{ scale: [0.9,1] }} viewport={{ once: true }} className="z-10 flex w-full items-center justify-center rounded-xl border border-white/10 bg-[#0d1118] py-4 text-sm font-semibold">{n}</motion.div>{i < nodes.length - 1 && <motion.div initial={{ height: 0 }} whileInView={{ height: 20 }} viewport={{ once: true }} className="absolute left-1/2 top-full w-px -translate-x-1/2 bg-gradient-to-b from-blue-400/60 to-violet-400/30" />}</div>)}</div></Reveal><div className="grid gap-3 sm:grid-cols-2">{["Reusable components", "Scalable architecture", "Performance", "Accessibility", "Testing", "Clean API integration"].map((x,i)=><Reveal delay={i*.04} key={x}><div className="rounded-2xl border border-white/8 p-5"><p className="font-semibold">{x}</p><p className="mt-2 text-sm leading-6 text-white/40">Designed as a practical engineering constraint, not an afterthought.</p></div></Reveal>)}</div></div></div></section>;
+}
