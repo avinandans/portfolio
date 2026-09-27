@@ -18,7 +18,7 @@ export function Navigation() {
 
   return (
     <header className={`fixed top-0 z-50 w-full transition-all ${scrolled ? "border-b border-white/10 bg-black/65 backdrop-blur-xl" : "bg-transparent"}`}>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-0" aria-label="Main navigation">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
         <a href="#home" className="text-sm font-black tracking-[.22em]">AVINANDAN</a>
         <div className="hidden items-center gap-7 md:flex">
           {links.map((link) => <a key={link} href={`#${link.toLowerCase()}`} className="text-sm text-white/60 transition hover:text-white">{link}</a>)}
